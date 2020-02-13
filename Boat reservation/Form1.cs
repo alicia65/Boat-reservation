@@ -16,5 +16,14 @@ namespace Boat_reservation
         {
             InitializeComponent();
         }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cbxboat.Items.Add("Canoe");
+            cbxboat.Items.Add("Kayak");
+            cbxboat.Items.Add("kayak");
+
+
+        }
     }
 }
