@@ -42,7 +42,7 @@
             // btnReservation
             // 
             this.btnReservation.Enabled = false;
-            this.btnReservation.Location = new System.Drawing.Point(25, 167);
+            this.btnReservation.Location = new System.Drawing.Point(25, 166);
             this.btnReservation.Name = "btnReservation";
             this.btnReservation.Size = new System.Drawing.Size(131, 36);
             this.btnReservation.TabIndex = 0;
