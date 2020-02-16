@@ -64,9 +64,9 @@ namespace Boat_reservation
             InitializeComponent();
             
         }
-        string numberOfAdult = "";
-        string numberOfChildren = "";
-        string totalOfRenters = "";
+        string numberOfAdult;
+        string numberOfChildren;
+        string totalOfRenters;
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -140,9 +140,15 @@ namespace Boat_reservation
         private void btnReset_Click_1(object sender, EventArgs e)
         {
             {
-                numberOfAdult = "";
-                numberOfChildren = "";
-                totalOfRenters = "";
+                numberOfAdult = 0;
+                numberOfChildren = 0;
+                totalOfRenters = 0;
+
+                txtNumberOfAdult.Text = "";
+                txtNumberOfChildren.Text = "";
+                txtTotalOfRenters.Text = "";
+
+                cbxboat.Focus();
             }
         }
         private void btnExit_Click_1(object sender, EventArgs e)
