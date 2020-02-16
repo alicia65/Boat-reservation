@@ -58,10 +58,15 @@ namespace Boat_reservation
 {
     public partial class Form1 : Form
     {
+       
         public Form1()
         {
             InitializeComponent();
+            
         }
+        string numberOfAdult = "";
+        string numberOfChildren = "";
+        string totalOfRenters = "";
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -112,8 +117,8 @@ namespace Boat_reservation
                     MessageBox.Show("Unknown boat");
                     return;
             }
-            int total = count + children + adults;
-            txtTotalOfRenters.Text = total.ToString();
+            totalOfRenters += count;
+            txtTotalOfRenters.Text = count.ToString();
 
             cbxboat.Focus();
         }
@@ -130,19 +135,20 @@ namespace Boat_reservation
 
             cbxboat.SelectedIndex = 0;          
         }
-
-        private void btnExit_Click(object sender, EventArgs e) 
-        {
-            Close();//end program with close method
-        }
+                
         //clear textBoxes of text by inserting blank strings
-        private void btnReset_Click(object sender, EventArgs e)
+        private void btnReset_Click_1(object sender, EventArgs e)
         {
-            txtNumberOfAdult.Text = "";
-            txtNumberOfChildren.Text = "";
-            txtTotalOfRenters.Text = "";
+            {
+                numberOfAdult = "";
+                numberOfChildren = "";
+                totalOfRenters = "";
+            }
         }
+        private void btnExit_Click_1(object sender, EventArgs e)
+        {
+            this.Close();//end program with close method
 
-
+        }
     }
 }
