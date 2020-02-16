@@ -114,6 +114,8 @@ namespace Boat_reservation
             }
             int total = count + children + adults;
             txtTotalOfRenters.Text = total.ToString();
+
+            cbxboat.Focus();
         }
 
         private void DisableButtons() 
@@ -128,5 +130,19 @@ namespace Boat_reservation
 
             cbxboat.SelectedIndex = 0;          
         }
+
+        private void btnExit_Click(object sender, EventArgs e) 
+        {
+            Close();//end program with close method
+        }
+        //clear textBoxes of text by inserting blank strings
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            txtNumberOfAdult.Text = "";
+            txtNumberOfChildren.Text = "";
+            txtTotalOfRenters.Text = "";
+        }
+
+
     }
 }
