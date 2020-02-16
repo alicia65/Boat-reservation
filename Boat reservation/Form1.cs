@@ -64,9 +64,9 @@ namespace Boat_reservation
             InitializeComponent();
             
         }
-        string numberOfAdult;
-        string numberOfChildren;
-        string totalOfRenters;
+        int numberOfAdult;
+        int numberOfChildren;
+        int totalOfRenters;
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -139,7 +139,6 @@ namespace Boat_reservation
         //clear textBoxes of text by inserting blank strings
         private void btnReset_Click_1(object sender, EventArgs e)
         {
-            {
                 numberOfAdult = 0;
                 numberOfChildren = 0;
                 totalOfRenters = 0;
@@ -149,7 +148,6 @@ namespace Boat_reservation
                 txtTotalOfRenters.Text = "";
 
                 cbxboat.Focus();
-            }
         }
         private void btnExit_Click_1(object sender, EventArgs e)
         {
