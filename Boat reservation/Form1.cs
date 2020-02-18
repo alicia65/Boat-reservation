@@ -117,6 +117,7 @@ namespace Boat_reservation
                     MessageBox.Show("Unknown boat");
                     return;
             }
+            totalOfRenters++;
             totalOfRenters += count;
             txtTotalOfRenters.Text = count.ToString();
 
@@ -125,7 +126,8 @@ namespace Boat_reservation
 
         private void DisableButtons() 
         {
-            btnReservation.Enabled = false;//prevent reservation button from being click
+            btnReservation.Enabled = true;
+            btnReserve.Enabled = false;// present reserve button from being  click
         }
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -139,14 +141,10 @@ namespace Boat_reservation
         //clear textBoxes of text by inserting blank strings
         private void btnReset_Click_1(object sender, EventArgs e)
         {
-                numberOfAdult = 0;
-                numberOfChildren = 0;
-                totalOfRenters = 0;
-
-                txtNumberOfAdult.Text = "";
-                txtNumberOfChildren.Text = "";
-                txtTotalOfRenters.Text = "";
-
+                             
+                txtNumberOfAdult.Text = String.Empty;
+                txtNumberOfChildren.Text = String.Empty;
+             
                 cbxboat.Focus();
         }
         private void btnExit_Click_1(object sender, EventArgs e)
