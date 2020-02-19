@@ -58,15 +58,32 @@ namespace Boat_reservation
 {
     public partial class Form1 : Form
     {
-       
+        int numberOfAdults = 0;
+        int numberOfChildren = 0;
+
         public Form1()
         {
             InitializeComponent();
-            
+            this.txtTotalOfRenters.Text += new System.EventHandler(this.TotalOfRenters);
+
+            this.txtTotalOfRenters.Text = numberOfChildren;
+            this.txtTotalOfRenters.Text = numberOfAdults;
+
         }
-        int numberOfAdult;
-        int numberOfChildren;
-        int totalOfRenters;
+        public void TotalOfRenters(object sender, EventArgs e)
+        {
+            int renters = txtTotalOfRenters.Value;
+            bool numberOfAdults = chkAdults.Checked;
+            bool numberOfChildren = chkChildren.Checked;
+
+            if (renters == numberOfAdults)
+            {
+                MessageBox
+            }
+        }
+
+                                                                    
+        
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -142,8 +159,8 @@ namespace Boat_reservation
         private void btnReset_Click_1(object sender, EventArgs e)
         {
                              
-                txtNumberOfAdult.Text = String.Empty;
-                txtNumberOfChildren.Text = String.Empty;
+                txtNumberOfAdult.Text = string.Empty;
+                txtNumberOfChildren.Text = string.Empty;
              
                 cbxboat.Focus();
         }
