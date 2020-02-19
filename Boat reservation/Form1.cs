@@ -65,7 +65,7 @@ namespace Boat_reservation
         }
         public void TotalOfRenters(object sender, EventArgs e)
         {
-
+            
         }
 
         public bool CheckCanoe(int Adults, int Children)
@@ -104,7 +104,7 @@ namespace Boat_reservation
 
             //One adult is valid.
             //One child is valid.
-            
+
             if (Adult == 1 || (Adult == 1 && Child == 1))
             {
                 return true;
@@ -113,11 +113,56 @@ namespace Boat_reservation
             {
                 return false;
             }
-        }            
-                     
+        }
+
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void DisableButtons()
+        {
+            btnCheckReservation.Enabled = true;
+            btnReserve.Enabled = false;// present reserve button from being  click
+
+           
+        }
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            cbxboat.Items.Add("Canoe");//add string to comboBox
+            cbxboat.Items.Add("Kayak");
+            cbxboat.Items.Add("Paddleboard");
+
+            cbxboat.SelectedIndex = 0;
+        }
+
+        //clear textBoxes of text by inserting blank strings
+        private void btnReset_Click_1(object sender, EventArgs e)
+        {
+            //Clear text fields in textBoxes
+            txtAdults.Text = string.Empty;
+            txtChildren.Text = string.Empty;
+            txtTotalOfRenters.Text = string.Empty;
+
+            cbxboat.Focus();
+        }
+        private void btnExit_Click_1(object sender, EventArgs e)
+        {
+            this.Close();//end program with close method
+        }
+
+        private void btnReservation_Click(object sender, EventArgs e)
+
+        //check reservation button click
+
+        // what type of boat?
+
+        //how many children?
+
+        // how  many adults?
+
+        // is ok?
+        {
             if (Int32.TryParse(txtAdults.Text, out int adults) == false)
             {
                 MessageBox.Show("Adults must be a number", "Error");
@@ -136,7 +181,7 @@ namespace Boat_reservation
                 return;
             }
 
-            if (children < 1) //Make sure it's positive number
+            if (children < 0) //Make sure it's positive number
             {
                 MessageBox.Show("Children must be positive", "Error");
                 return;
@@ -149,63 +194,86 @@ namespace Boat_reservation
             switch (boat)
             {
                 case "Canoe":
-                    count = children;
-                    count = adults;
-                    break;
+                    count = children; //eg. children = 1
+                    count = count + adults; // eg. adults = 2
+                    bool canoeValid = CheckCanoe(adults, children); // call CheckCanoe method to check validation on adults and children.
+                    if (canoeValid == true)
+                    {
+                        //enable reserve button
+                        btnReserve.Enabled = true;
+                        lblMessage.Text = "Canoe reservation valid";
+                    }
+                    else
+                    {
+                        // Not valid - what to do here?
+                        lblMessage.Text = "Canoe reservation NOT valid";
+
+                    }
+                    break;// stop statement
+
                 case "Kayak":
-                    count = children;
-                    count = adults;
+                    count = children; // value children are assigned to count variable which stores the value 
+                    count = count + adults; // add value adults to count to get the total and assigns to count
+                    bool kayakValid = CheckKayak(adults, children);
+
+                    /*Kayak is valid. Therefore reserve button is enable.
+                     and label message displays confirmation text message to user.
+                    */
+                    if (kayakValid == true)
+                    {
+                        //enable reserve button
+                        btnReserve.Enabled = true;//
+                        lblMessage.Text = "Kayak reservation valid";
+                    }
+                    else
+                    {
+                        // Not valid - what to do here?
+                        lblMessage.Text = "Kayak reservation NOT valid";
+                    }
                     break;
+
                 case "Paddleboard":
                     count = children;
-                    count = adults;
+                    count = count + adults;
+                    bool paddleboardValid = CheckPaddleBoard(adults, children);
+                    if (paddleboardValid == true)
+                    {
+                        // enable reserve button
+                        btnReserve.Enabled = true;
+                        lblMessage.Text = "Paddleboard reservation valid";
+                    }
+                    else
+                    {
+                        // Not valid - what to do here? 
+                        lblMessage.Text = "Paddleboard reservation NOT valid";
+                    }
                     break;
+
                 default:
-                    MessageBox.Show("Unknown boat");
+                    MessageBox.Show("Unknown boat");//Message box informs user to select canoe, kayak or paddleboard.
                     return;
             }
-            count++;
-            totalOfRenters += count;
-            txtTotalOfRenters.Text = count.ToString();
 
-            cbxboat.Focus();
-        }
+            txtTotalOfRenters.Text = count.ToString();// To string function converts count values from interger
+                                                      //to string and displays on the textbox total of  
 
-        private void DisableButtons() 
-        {
-            btnCheckReservation.Enabled = true;
-            btnReserve.Enabled = false;// present reserve button from being  click
-        }
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            cbxboat.Items.Add("Canoe");//add string to comboBox
-            cbxboat.Items.Add("Kayak");
-            cbxboat.Items.Add("Paddleboard");
-
-            cbxboat.SelectedIndex = 0;          
-        }
-                
-        //clear textBoxes of text by inserting blank strings
-        private void btnReset_Click_1(object sender, EventArgs e)
-        {
-                             
-                txtNumberOfAdult.Text = string.Empty;
-                txtNumberOfChildren.Text = string.Empty;
-             
-                cbxboat.Focus();
-        }
-        private void btnExit_Click_1(object sender, EventArgs e)
-        {
-            this.Close();//end program with close method
+            cbxboat.Focus();//starting point at combobox called boat
         }
 
-        private void btnReservation_Click(object sender, EventArgs e)
+        private void btnReserve_Click(object sender, EventArgs e)
         {
-            
-            
-            
-            string boats = btnCheckReservation.;
-            lblMessage.Text = btnCheckReservation.Value.ToString();
+            //This should only be enable if the  reservation has  been cheked and found to be valid.
+
+            //Show message box with reservation details
+
+            string boat = cbxboat.Text;
+            string adults = txtAdults.Text;
+            string children = txtChildren.Text;
+
+            MessageBox.Show(boat + adults + children); 
         }
-    }
-}
+
+     } 
+        
+ }
+
