@@ -78,7 +78,7 @@ namespace Boat_reservation
 
             if (renters == numberOfAdults)
             {
-                MessageBox
+                MessageBox.Show()
             }
         }
 
@@ -168,6 +168,12 @@ namespace Boat_reservation
         {
             this.Close();//end program with close method
 
+        }
+
+        private void btnReservation_Click(object sender, EventArgs e)
+        {
+            string boats = btnReservation.Value;
+            lblMessage.Text = btnReservation.Value.ToString();
         }
     }
 }

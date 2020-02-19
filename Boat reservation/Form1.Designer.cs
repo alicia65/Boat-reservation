@@ -37,7 +37,7 @@
             this.txtNumberOfChildren = new System.Windows.Forms.Label();
             this.txtAdults = new System.Windows.Forms.TextBox();
             this.txtChildren = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblMessage = new System.Windows.Forms.Label();
             this.btnReserve = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
@@ -51,6 +51,7 @@
             this.btnReservation.TabIndex = 3;
             this.btnReservation.Text = "Check Reservation";
             this.btnReservation.UseVisualStyleBackColor = true;
+            this.btnReservation.Click += new System.EventHandler(this.btnReservation_Click);
             // 
             // cbxboat
             // 
@@ -118,13 +119,13 @@
             this.txtChildren.Size = new System.Drawing.Size(121, 24);
             this.txtChildren.TabIndex = 2;
             // 
-            // label3
+            // lblMessage
             // 
-            this.label3.Location = new System.Drawing.Point(215, 184);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(121, 17);
-            this.label3.TabIndex = 9;
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblMessage.Location = new System.Drawing.Point(251, 181);
+            this.lblMessage.Name = "lblMessage";
+            this.lblMessage.Size = new System.Drawing.Size(121, 17);
+            this.lblMessage.TabIndex = 9;
+            this.lblMessage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnReserve
             // 
@@ -163,7 +164,7 @@
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.btnReserve);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblMessage);
             this.Controls.Add(this.txtChildren);
             this.Controls.Add(this.txtAdults);
             this.Controls.Add(this.txtNumberOfChildren);
@@ -194,7 +195,7 @@
         private System.Windows.Forms.Label txtNumberOfChildren;
         private System.Windows.Forms.TextBox txtAdults;
         private System.Windows.Forms.TextBox txtChildren;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblMessage;
         private System.Windows.Forms.Button btnReserve;
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.Button btnExit;
