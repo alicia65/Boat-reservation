@@ -73,18 +73,39 @@ namespace Boat_reservation
         public void TotalOfRenters(object sender, EventArgs e)
         {
             int renters = txtTotalOfRenters.Value;
-            bool numberOfAdults = chkAdults.Checked;
-            bool numberOfChildren = chkChildren.Checked;
+            bool numberOfAdults = CheckCanoe.Checked;
+            bool numberOfChildren = CheckCanoe.Checked;
+            bool CheckKayak.Checked;
+            bool CheckPaddleBoard.Checked;
 
             if (renters == numberOfAdults)
             {
-                MessageBox.Show()
+                MessageBox.Show("Valid");
             }
         }
 
-                                                                    
-        
+        public void CheckCanoe()
+        {
+            if (numberOfAdults == 2 && (numberOfAdults = 1 & numberOfChildren == 1))
+            {
+                MessageBox.Show("Valid");
+            }
+        }  
+       public void CheckKayak() 
+        {
+            if(numberOfAdults == 1 & numberOfChildren == 0) 
+            {
+                MessageBox.Show("Valid");
+            }
+        }
 
+        public void CheckPaddleBoard() 
+        {
+            if(numberOfAdults == 1 | (numberOfAdults == 1 & numberOfChildren == 1))
+            {
+                MessageBox.Show("Valid");
+            }
+        }
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -134,7 +155,7 @@ namespace Boat_reservation
                     MessageBox.Show("Unknown boat");
                     return;
             }
-            totalOfRenters++;
+            count++;
             totalOfRenters += count;
             txtTotalOfRenters.Text = count.ToString();
 
@@ -167,7 +188,6 @@ namespace Boat_reservation
         private void btnExit_Click_1(object sender, EventArgs e)
         {
             this.Close();//end program with close method
-
         }
 
         private void btnReservation_Click(object sender, EventArgs e)
