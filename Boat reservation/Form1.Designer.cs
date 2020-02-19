@@ -2,7 +2,7 @@
 {
     partial class Form1
     {
-        /// <summary>
+        /// <summary>   
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnReservation = new System.Windows.Forms.Button();
+            this.btnCheckReservation = new System.Windows.Forms.Button();
             this.cbxboat = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -43,15 +43,15 @@
             this.btnExit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // btnReservation
+            // btnCheckReservation
             // 
-            this.btnReservation.Location = new System.Drawing.Point(25, 176);
-            this.btnReservation.Name = "btnReservation";
-            this.btnReservation.Size = new System.Drawing.Size(184, 26);
-            this.btnReservation.TabIndex = 3;
-            this.btnReservation.Text = "Check Reservation";
-            this.btnReservation.UseVisualStyleBackColor = true;
-            this.btnReservation.Click += new System.EventHandler(this.btnReservation_Click);
+            this.btnCheckReservation.Location = new System.Drawing.Point(25, 176);
+            this.btnCheckReservation.Name = "btnCheckReservation";
+            this.btnCheckReservation.Size = new System.Drawing.Size(184, 26);
+            this.btnCheckReservation.TabIndex = 3;
+            this.btnCheckReservation.Text = "Check Reservation";
+            this.btnCheckReservation.UseVisualStyleBackColor = true;
+            this.btnCheckReservation.Click += new System.EventHandler(this.btnReservation_Click);
             // 
             // cbxboat
             // 
@@ -129,6 +129,7 @@
             // 
             // btnReserve
             // 
+            this.btnReserve.Enabled = false;
             this.btnReserve.Location = new System.Drawing.Point(57, 248);
             this.btnReserve.Name = "btnReserve";
             this.btnReserve.Size = new System.Drawing.Size(99, 23);
@@ -173,7 +174,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbxboat);
-            this.Controls.Add(this.btnReservation);
+            this.Controls.Add(this.btnCheckReservation);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "Form1";
@@ -186,7 +187,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnReservation;
+        private System.Windows.Forms.Button btnCheckReservation;
         private System.Windows.Forms.ComboBox cbxboat;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;

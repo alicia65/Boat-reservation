@@ -58,54 +58,63 @@ namespace Boat_reservation
 {
     public partial class Form1 : Form
     {
-        int numberOfAdults = 0;
-        int numberOfChildren = 0;
-
         public Form1()
         {
             InitializeComponent();
-            this.txtTotalOfRenters.Text += new System.EventHandler(this.TotalOfRenters);
-
-            this.txtTotalOfRenters.Text = numberOfChildren;
-            this.txtTotalOfRenters.Text = numberOfAdults;
 
         }
         public void TotalOfRenters(object sender, EventArgs e)
         {
-            int renters = txtTotalOfRenters.Value;
-            bool numberOfAdults = CheckCanoe.Checked;
-            bool numberOfChildren = CheckCanoe.Checked;
-            bool CheckKayak.Checked;
-            bool CheckPaddleBoard.Checked;
 
-            if (renters == numberOfAdults)
+        }
+
+        public bool CheckCanoe(int Adults, int Children)
+
+        //Two adults is valid
+        // one adult and one child is valid.
+        {
+            if (Adults == 2 || (Adults == 1 && Children == 1))
             {
-                MessageBox.Show("Valid");
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
 
-        public void CheckCanoe()
+        public bool CheckKayak(int Adult, int Children)
         {
-            if (numberOfAdults == 2 && (numberOfAdults = 1 & numberOfChildren == 1))
+            //One adult is valid.
+            //No children is valid.
+
+            if (Adult == 1 && Children == 0)
             {
-                MessageBox.Show("Valid");
+                return true;
             }
-        }  
-       public void CheckKayak() 
-        {
-            if(numberOfAdults == 1 & numberOfChildren == 0) 
+
+            else
             {
-                MessageBox.Show("Valid");
+                return false;
             }
         }
 
-        public void CheckPaddleBoard() 
+        public bool CheckPaddleBoard(int Adult, int Child)
         {
-            if(numberOfAdults == 1 | (numberOfAdults == 1 & numberOfChildren == 1))
+
+            //One adult is valid.
+            //One child is valid.
+            
+            if (Adult == 1 || (Adult == 1 && Child == 1))
             {
-                MessageBox.Show("Valid");
+                return true;
             }
-        }
+            else
+            {
+                return false;
+            }
+        }            
+                     
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -164,7 +173,7 @@ namespace Boat_reservation
 
         private void DisableButtons() 
         {
-            btnReservation.Enabled = true;
+            btnCheckReservation.Enabled = true;
             btnReserve.Enabled = false;// present reserve button from being  click
         }
         private void Form1_Load(object sender, EventArgs e)
@@ -192,8 +201,11 @@ namespace Boat_reservation
 
         private void btnReservation_Click(object sender, EventArgs e)
         {
-            string boats = btnReservation.Value;
-            lblMessage.Text = btnReservation.Value.ToString();
+            
+            
+            
+            string boats = btnCheckReservation.;
+            lblMessage.Text = btnCheckReservation.Value.ToString();
         }
     }
 }
